@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ShoppersStack Automation Suite">
+<listeners>
+<listener class-name="ShopperStack1.listeners.MyListeners"></listener>
+</listeners>
+  <test name="ShoppersStack Test">
+    <classes>
+      <class name="shopperstack.testcases.Register"/>
+     	<class name="shopperstack.testcases.Login"/>
+       <class name="shopperstack.testcases.Search"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
