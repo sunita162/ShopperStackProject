@@ -1,14 +1,19 @@
 package shopperstack.pageobjects;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import genricUtilities.ReadTestData;
+
 
 
 public class RegisterPage {
-	
+	// ================Web elements or Property================
 	WebDriver driver;
 	@FindBy(id="First Name")
 	private WebElement firstNameField;
@@ -35,14 +40,21 @@ public class RegisterPage {
 	private WebElement termsAndConditionField;
 	
 	@FindBy(id="btnDisabled")
-	private WebElement registerField;
+	private WebElement registerButton;
+   
+	
+	private By errorMessages = By.cssSelector("#cnfPassword-error"); 
+	
+	@FindBy(css="#cnfPassword-error")
+	private WebElement passwordMisMatch;
+	
 	
 	public RegisterPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 		
 	}
-	
+	//Action
 	public void enterFirstName(String firstNameText) {
 		firstNameField.sendKeys( firstNameText);
 	}
@@ -75,10 +87,67 @@ public class RegisterPage {
 				termsAndConditionField.click();
 		}
 			public void clickOnRegister() {
-				registerField.click();
+				registerButton.click();
 			}
+			
+			//================Business Logic or Action methods or Behavior================
+		
+		public UserHomePage registerWithMandatoryFields(String firstNameText,String lastNameText,String emailText,String telephoneText,String passwordText) {
+		firstNameField.sendKeys( firstNameText);
+		lastNameField.sendKeys(lastNameText);
+		emailAdressField.sendKeys(ReadTestData.generateEmailWithTimeStamp());
+		phoneNumberField.sendKeys( ReadTestData.generatePhoneNumber());	
+		 passwordField.sendKeys(passwordText);
+		 passwordConfirmField.sendKeys(passwordText);
+		 
+		 termsAndConditionField.click();
+		 
+		 registerButton.click();
+		 return new UserHomePage(driver);
+		
+		}
+		public HomePage register(String firstNameText, String lastNameText, String emailText, String passwordText, String confirmPasswordText, String phone) {
+			
+			firstNameField.sendKeys(firstNameText);
+			lastNameField.sendKeys(lastNameText);
+			phoneNumberField.sendKeys( ReadTestData.generatePhoneNumber());
+			emailAdressField.sendKeys(ReadTestData.generateEmailWithTimeStamp());
+			passwordField.sendKeys(passwordText);
+			passwordConfirmField.sendKeys(confirmPasswordText);
+			termsAndConditionField.click();
+			registerButton.click();
+	        return new HomePage(driver);
+	        
+	    }
 		
 		
-	}
+public HomePage registerFieldValidation(String firstNameText, String lastNameText, String emailText, String passwordText, String confirmPasswordText, String phone) {
+			
+			firstNameField.sendKeys(firstNameText);
+			lastNameField.sendKeys(lastNameText);
+			phoneNumberField.sendKeys( ReadTestData.generatePhoneNumber());
+			emailAdressField.sendKeys(ReadTestData.generateEmailWithTimeStamp());
+			passwordField.sendKeys(passwordText);
+			passwordConfirmField.sendKeys(confirmPasswordText);
+			termsAndConditionField.click();
+			//registerButton.click();
+	        return new HomePage(driver);
+}
+
+
+		public boolean isErrorDisplayed(String expectedErrorMessage) {
+	        List<WebElement> errorElements = driver.findElements(errorMessages);
+	        for (WebElement errorElement : errorElements) {
+	            if (errorElement.isDisplayed() && errorElement.getText().contains(expectedErrorMessage)) {
+	                return true;
+	            }
+	        }
+	        return false;
+
+		}	
+		
+		
+}
+	
 
 	

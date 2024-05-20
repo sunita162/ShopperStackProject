@@ -1,32 +1,38 @@
 package shopperstack.testcases;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import genricUtilities.ReadTestData;
 import shopperstack.base.Base;
 import shopperstack.pageobjects.HomePage;
 import shopperstack.pageobjects.ShopperLoginPage;
-import shopperstack.utility.Utilities;
+
 
 public class Login extends Base {
-
-    public Login() throws IOException {
+	ShopperLoginPage shopperLoginPage;
+    
+	public Login()  {
         super();
     }
-    public WebDriver driver;
+     WebDriver driver;
+    
 
     @BeforeMethod
     public void setUp() {
-        driver = initializeBrowserAndOpenApplicationURL(prop.getProperty("browserName"));
-        HomePage homePage = new HomePage(driver);
+    	driver = initializeBrowserAndOpenApplicationURL(prop.getProperty("browserName"));
+    	HomePage homePage = new HomePage(driver);
+    	shopperLoginPage =homePage.clickOnLoginButton();
         
-        homePage.clickOnLoginButton();
     }
 
     @AfterMethod
@@ -34,40 +40,104 @@ public class Login extends Base {
         driver.quit();
     }
 
-    @Test(priority = 1, dataProvider = "validCredentialsSupplier")
-    public void verifyLoginWithValidCredentials(String email, String password) {
-       
-    	ShopperLoginPage shopperLoginPage = new ShopperLoginPage(driver);
-        shopperLoginPage.enterEmailId(email);
-        shopperLoginPage.enterPassword(password);
-        shopperLoginPage.clickOnLoginButton();
-    }
-
+    @Test(priority = 1,dataProvider = "validCredentialsSupplier")
+    public void verifyLoginWithValidCredentials (String email, String password)
+    {
+    	 HomePage homePage = shopperLoginPage.shopperLogin(email, password);
+        Assert.assertTrue(homePage.getDisplayStatusOfhomePageInformationOption());
+    }  
+   
     @DataProvider(name = "validCredentialsSupplier")
     public Object[][] supplyTestData() {
     	
-    	Object[][] data=  Utilities.getTestDataFromExcel("Login");
+    	Object[][] data=  ReadTestData.getTestDataFromExcel("Login");
     	return data;
     }
 
     
    @Test(priority = 2)
     public void verifyLoginWithValidEmailAndInvalidPassword() {
-	   ShopperLoginPage shopperLoginPage = new ShopperLoginPage(driver);
-       shopperLoginPage.enterEmailId(dataProp.getProperty("validEmail"));
-       shopperLoginPage.enterPassword(dataProp.getProperty("invalidPassword"));
-       shopperLoginPage.clickOnLoginButton();
-	   shopperLoginPage.enterPassword("Password");
-	   }
+	   shopperLoginPage.shopperLogin(prop.getProperty("validEmail"), dataProp.getProperty("invalidPassword"));
+       
 
+       try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
+       
+       boolean Error = driver.getPageSource().contains("Given user ID or password is wrong");
+	    if (Error == true)
+	    {
+	     System.out.print(" Given user ID or password is wrong  - Error msg is displayed");
+	     Assert.assertTrue(true, "Error message is not displayed as expected");
+	    }
+	    else
+	    {
+	     System.out.print(" Error msg is not dispalyed");
+	     Assert.fail("Error message is not displayed");
+	    }
+
+   }
+   
     @Test(priority = 3)
     public void verifyLoginWithInvalidEmailAndValidPassword() {
+    	shopperLoginPage.shopperLogin(ReadTestData.generateEmailWithTimeStamp(), dataProp.getProperty("validPassword"));
     	
-    	ShopperLoginPage shopperLoginPage = new ShopperLoginPage(driver);
-        shopperLoginPage.enterEmailId("Test123@gmail.com");
-        shopperLoginPage.enterPassword(dataProp.getProperty("validPassword"));
-        shopperLoginPage.clickOnLoginButton();
+        try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
 
-        
+        boolean Error = driver.getPageSource().contains("Given user ID or password is wrong");
+	    if (Error == true)
+	    {
+	     System.out.print(" Given user ID or password is wrong  - Error msg is displayed");
+	     Assert.assertTrue(true, "Error message is not displayed as expected");
+	    }
+	    else
+	    {
+	     System.out.print(" Error msg is not dispalyed");
+	     Assert.fail("Error message is not displayed");
+	    }
     }
+    
+    @Test(priority = 4)
+    public void verifyLoginWithInvalidEmailandPassword() {
+    	
+   shopperLoginPage.shopperLogin(ReadTestData.generateEmailWithTimeStamp(), dataProp.getProperty("invalidPassword"));
+    	   
+   try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
+    	   
+    	   boolean Error = driver.getPageSource().contains("Given user ID or password is wrong");
+   	    if (Error == true)
+   	    {
+   	     System.out.print(" Given user ID or password is wrong  - Error msg is displayed");
+   	     Assert.assertTrue(true, "Error message is not displayed as expected");
+   	    }
+   	    else
+   	    {
+   	     System.out.print(" Error msg is not dispalyed");
+   	     Assert.fail("Error message is not displayed");
+   	    }
+    }
+    
+    @Test(priority=5)
+    public void verifyLoginWithoutProvidingCredentials() {
+   shopperLoginPage.clickOnLoginButton();
 }
+}
+
+    
+
+    
+    
+
