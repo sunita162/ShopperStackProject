@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="shopperstack.testcases.Register">
+      <class name="shopperstack.testcases.Login">
         <methods>
-          <include name="setup"/>
           <include name="tearDown"/>
-          <include name="verifyRegisteringAccountWithExistingEmailAdress"/>
+          <include name="setUp"/>
+          <include name="verifyLoginWithValidEmailAndInvalidPassword"/>
         </methods>
-      </class> <!-- shopperstack.testcases.Register -->
+      </class> <!-- shopperstack.testcases.Login -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

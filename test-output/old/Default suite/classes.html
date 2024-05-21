@@ -4,18 +4,30 @@
 <th>Method name</th>
 <th>Groups</th>
 </tr><tr>
-<td>shopperstack.testcases.Register</td>
+<td>shopperstack.testcases.Login</td>
 <td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@Test</td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>verifypasswordMisMatchs</td>
+<td>verifyLoginWithoutProvidingCredentials</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
-<td>verifyRegisteringAnAccountWithMandatoryFields</td>
+<td>verifyLoginWithInvalidEmailAndValidPassword</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>verifyLoginWithInvalidEmailandPassword</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>verifyLoginWithValidCredentials</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>verifyLoginWithValidEmailAndInvalidPassword</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
@@ -25,7 +37,7 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>setup</td>
+<td>setUp</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@AfterMethod</td>

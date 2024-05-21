@@ -66,14 +66,12 @@ public class ShopperLoginPage {
         shopperLoginPage.enterPassword(password);
         shopperLoginPage.clickOnLoginButton();
     }
-    public HomePage login1(String username, String password) throws InterruptedException {
+    public HomePage login1(String username, String password)  {
     	
-   	 Thread.sleep(5000);
-   	clickOnLoginButton();
+    	clickOnLoginButton();
        enterEmailId(username);
        enterPassword(password);
-       Thread.sleep(5000);
-       clickOnLoginButton();
+        clickOnLoginButton();
        return new HomePage(driver);
    }
 }

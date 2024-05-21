@@ -18,7 +18,6 @@ public class UserHomePage {
 	}
 		
 		public String retrieveUserLandingPage() {
-			
 			String UserLandingPageText =  UserLandingPage.getText();
 			return UserLandingPageText;
 		}

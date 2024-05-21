@@ -28,7 +28,7 @@ public class ExtentReporter {
 		extentReport.attachReporter(sparkReporter);
 		
 		Properties configProp = new Properties();
-		File configProFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\ShoppersStack\\config\\config.properties");
+		File configProFile = new File(System.getProperty("user.dir")+"src/test/resources/PropertyFile/config.properties");
 		try {
 		FileInputStream fisConfigProp = new FileInputStream(configProFile);
 		configProp.load(fisConfigProp);

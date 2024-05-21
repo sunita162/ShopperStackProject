@@ -1,143 +1,72 @@
 package shopperstack.testcases;
 
-import java.io.IOException;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import genricUtilities.ReadTestData;
+//import genricUtilities.Utilities.AssertionUtils;
 import shopperstack.base.Base;
 import shopperstack.pageobjects.HomePage;
 import shopperstack.pageobjects.ShopperLoginPage;
 
-
 public class Login extends Base {
-	ShopperLoginPage shopperLoginPage;
-    
-	public Login()  {
+    private ShopperLoginPage shopperLoginPage;
+    private HomePage homePage;
+
+    public Login() {
         super();
     }
-     WebDriver driver;
-    
 
-    @BeforeMethod
-    public void setUp() {
-    	driver = initializeBrowserAndOpenApplicationURL(prop.getProperty("browserName"));
-    	HomePage homePage = new HomePage(driver);
-    	shopperLoginPage =homePage.clickOnLoginButton();
-        
+    @Test( dataProvider = "validCredentialsSupplier")
+    public void verifyLoginWithValidCredentials(String email, String password) {
+        homePage = new HomePage(driver);
+        shopperLoginPage = homePage.clickOnLoginButton();
+        homePage = shopperLoginPage.shopperLogin(email, password);
+        Assert.assertTrue(homePage.getDisplayStatusOfhomePageInformationOption(), "Login was not successful with valid credentials");
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
-
-    @Test(priority = 1,dataProvider = "validCredentialsSupplier")
-    public void verifyLoginWithValidCredentials (String email, String password)
-    {
-    	 HomePage homePage = shopperLoginPage.shopperLogin(email, password);
-        Assert.assertTrue(homePage.getDisplayStatusOfhomePageInformationOption());
-    }  
-   
     @DataProvider(name = "validCredentialsSupplier")
     public Object[][] supplyTestData() {
-    	
-    	Object[][] data=  ReadTestData.getTestDataFromExcel("Login");
-    	return data;
+        return ReadTestData.getTestDataFromExcel("Login");
     }
 
-    
-   @Test(priority = 2)
+    @Test
     public void verifyLoginWithValidEmailAndInvalidPassword() {
-	   shopperLoginPage.shopperLogin(prop.getProperty("validEmail"), dataProp.getProperty("invalidPassword"));
-       
+        homePage = new HomePage(driver);
+        shopperLoginPage = homePage.clickOnLoginButton();
+        shopperLoginPage.shopperLogin(prop.getProperty("validEmail"), dataProp.getProperty("invalidPassword"));
+        genricUtilities.AssertionUtils.assertErrorMessageDisplayed(driver, "Given user ID or password is wrong");
+    }
 
-       try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			
-			e.printStackTrace();
-		}
-       
-       boolean Error = driver.getPageSource().contains("Given user ID or password is wrong");
-	    if (Error == true)
-	    {
-	     System.out.print(" Given user ID or password is wrong  - Error msg is displayed");
-	     Assert.assertTrue(true, "Error message is not displayed as expected");
-	    }
-	    else
-	    {
-	     System.out.print(" Error msg is not dispalyed");
-	     Assert.fail("Error message is not displayed");
-	    }
-
-   }
-   
-    @Test(priority = 3)
+    @Test
     public void verifyLoginWithInvalidEmailAndValidPassword() {
-    	shopperLoginPage.shopperLogin(ReadTestData.generateEmailWithTimeStamp(), dataProp.getProperty("validPassword"));
-    	
-        try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			
-			e.printStackTrace();
-		}
+        homePage = new HomePage(driver);
+        shopperLoginPage = homePage.clickOnLoginButton();
+        shopperLoginPage.shopperLogin(ReadTestData.generateEmailWithTimeStamp(), dataProp.getProperty("validPassword"));
+        //assertErrorMessageDisplayed("Given user ID or password is wrong");
+        genricUtilities.AssertionUtils.assertErrorMessageDisplayed(driver, "Given user ID or password is wrong");
 
-        boolean Error = driver.getPageSource().contains("Given user ID or password is wrong");
-	    if (Error == true)
-	    {
-	     System.out.print(" Given user ID or password is wrong  - Error msg is displayed");
-	     Assert.assertTrue(true, "Error message is not displayed as expected");
-	    }
-	    else
-	    {
-	     System.out.print(" Error msg is not dispalyed");
-	     Assert.fail("Error message is not displayed");
-	    }
     }
-    
-    @Test(priority = 4)
+
+    @Test
     public void verifyLoginWithInvalidEmailandPassword() {
-    	
-   shopperLoginPage.shopperLogin(ReadTestData.generateEmailWithTimeStamp(), dataProp.getProperty("invalidPassword"));
-    	   
-   try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			
-			e.printStackTrace();
-		}
-    	   
-    	   boolean Error = driver.getPageSource().contains("Given user ID or password is wrong");
-   	    if (Error == true)
-   	    {
-   	     System.out.print(" Given user ID or password is wrong  - Error msg is displayed");
-   	     Assert.assertTrue(true, "Error message is not displayed as expected");
-   	    }
-   	    else
-   	    {
-   	     System.out.print(" Error msg is not dispalyed");
-   	     Assert.fail("Error message is not displayed");
-   	    }
+        homePage = new HomePage(driver);
+        shopperLoginPage = homePage.clickOnLoginButton();
+        shopperLoginPage.shopperLogin(ReadTestData.generateEmailWithTimeStamp(), dataProp.getProperty("invalidPassword"));
+        genricUtilities.AssertionUtils.assertErrorMessageDisplayed(driver, "Given user ID or password is wrong");
     }
-    
-    @Test(priority=5)
+
+    @Test
     public void verifyLoginWithoutProvidingCredentials() {
-   shopperLoginPage.clickOnLoginButton();
+        homePage = new HomePage(driver);
+        shopperLoginPage = homePage.clickOnLoginButton();
+        shopperLoginPage.clickOnLoginButton();
+        
+        genricUtilities.AssertionUtils.assertErrorMessageDisplayed(driver, "Please enter your username and password");
+       
+    }
+
+	
 }
-}
-
-    
-
-    
-    
-

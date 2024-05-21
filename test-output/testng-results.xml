@@ -1,43 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+<testng-results ignored="4" total="6" passed="2" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[Successfully Launched Chrome Browser]]>
+    </line>
+    <line>
+      <![CDATA[Browser window is maximized successfully]]>
+    </line>
+    <line>
+      <![CDATA[Successfully Launched Chrome Browser]]>
+    </line>
+    <line>
+      <![CDATA[Browser window is maximized successfully]]>
+    </line>
   </reporter-output>
-  <suite started-at="2024-05-18T10:23:12 BST" name="ShoppersStack Automation Suite" finished-at="2024-05-18T10:24:58 BST" duration-ms="105970">
+  <suite started-at="2024-05-21T09:44:48 BST" name="Default suite" finished-at="2024-05-21T09:45:05 BST" duration-ms="16824">
     <groups>
     </groups>
-    <test started-at="2024-05-18T10:23:12 BST" name="ShoppersStack Test" finished-at="2024-05-18T10:24:58 BST" duration-ms="105970">
-      <class name="shopperstack.testcases.Register">
-        <test-method is-config="true" signature="setup()[pri:0, instance:shopperstack.testcases.Register@140c9f39]" started-at="2024-05-18T10:23:13 BST" name="setup" finished-at="2024-05-18T10:23:22 BST" duration-ms="9745" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyRegisteringAnAccountWithMandatoryFields()[pri:1, instance:shopperstack.testcases.Register@140c9f39]" started-at="2024-05-18T10:23:22 BST" name="verifyRegisteringAnAccountWithMandatoryFields" finished-at="2024-05-18T10:23:25 BST" duration-ms="2212" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyRegisteringAnAccountWithMandatoryFields -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.testcases.Register@140c9f39]" started-at="2024-05-18T10:23:25 BST" name="tearDown" finished-at="2024-05-18T10:23:25 BST" duration-ms="301" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:shopperstack.testcases.Register@140c9f39]" started-at="2024-05-18T10:23:25 BST" name="setup" finished-at="2024-05-18T10:23:32 BST" duration-ms="6794" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifypasswordMisMatchs()[pri:2, instance:shopperstack.testcases.Register@140c9f39]" started-at="2024-05-18T10:23:32 BST" name="verifypasswordMisMatchs" finished-at="2024-05-18T10:23:39 BST" duration-ms="7389" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifypasswordMisMatchs -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.testcases.Register@140c9f39]" started-at="2024-05-18T10:23:39 BST" name="tearDown" finished-at="2024-05-18T10:23:39 BST" duration-ms="360" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- shopperstack.testcases.Register -->
+    <test started-at="2024-05-21T09:44:48 BST" name="Default test" finished-at="2024-05-21T09:45:05 BST" duration-ms="16824">
       <class name="shopperstack.testcases.Login">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:23:41 BST" name="setUp" finished-at="2024-05-18T10:23:48 BST" duration-ms="7823" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:shopperstack.testcases.Login@1613674b]" started-at="2024-05-21T09:44:48 BST" name="setUp" finished-at="2024-05-21T09:44:52 BST" duration-ms="3444" status="PASS">
           <reporter-output>
+            <line>
+              <![CDATA[Successfully Launched Chrome Browser]]>
+            </line>
+            <line>
+              <![CDATA[Browser window is maximized successfully]]>
+            </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyLoginWithValidCredentials(java.lang.String, java.lang.String)[pri:1, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:23:48 BST" name="verifyLoginWithValidCredentials" data-provider="validCredentialsSupplier" finished-at="2024-05-18T10:23:50 BST" duration-ms="1530" status="PASS">
+        <test-method signature="verifyLoginWithValidCredentials(java.lang.String, java.lang.String)[pri:0, instance:shopperstack.testcases.Login@1613674b]" started-at="2024-05-21T09:44:52 BST" name="verifyLoginWithValidCredentials" data-provider="validCredentialsSupplier" finished-at="2024-05-21T09:44:56 BST" duration-ms="4186" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -53,15 +45,21 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginWithValidCredentials -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:23:50 BST" name="tearDown" finished-at="2024-05-18T10:23:50 BST" duration-ms="251" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.testcases.Login@1613674b]" started-at="2024-05-21T09:44:56 BST" name="tearDown" finished-at="2024-05-21T09:44:56 BST" duration-ms="219" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:23:50 BST" name="setUp" finished-at="2024-05-18T10:23:57 BST" duration-ms="6582" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:shopperstack.testcases.Login@1613674b]" started-at="2024-05-21T09:44:56 BST" name="setUp" finished-at="2024-05-21T09:45:01 BST" duration-ms="4336" status="PASS">
           <reporter-output>
+            <line>
+              <![CDATA[Successfully Launched Chrome Browser]]>
+            </line>
+            <line>
+              <![CDATA[Browser window is maximized successfully]]>
+            </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyLoginWithValidCredentials(java.lang.String, java.lang.String)[pri:1, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:23:57 BST" name="verifyLoginWithValidCredentials" data-provider="validCredentialsSupplier" finished-at="2024-05-18T10:23:58 BST" duration-ms="1797" status="PASS">
+        <test-method signature="verifyLoginWithValidCredentials(java.lang.String, java.lang.String)[pri:0, instance:shopperstack.testcases.Login@1613674b]" started-at="2024-05-21T09:45:01 BST" name="verifyLoginWithValidCredentials" data-provider="validCredentialsSupplier" finished-at="2024-05-21T09:45:04 BST" duration-ms="3804" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -77,73 +75,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginWithValidCredentials -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:23:58 BST" name="tearDown" finished-at="2024-05-18T10:23:59 BST" duration-ms="390" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:23:59 BST" name="setUp" finished-at="2024-05-18T10:24:06 BST" duration-ms="6635" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyLoginWithValidEmailAndInvalidPassword()[pri:2, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:24:06 BST" name="verifyLoginWithValidEmailAndInvalidPassword" finished-at="2024-05-18T10:24:10 BST" duration-ms="4269" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginWithValidEmailAndInvalidPassword -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:24:10 BST" name="tearDown" finished-at="2024-05-18T10:24:10 BST" duration-ms="415" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:24:10 BST" name="setUp" finished-at="2024-05-18T10:24:17 BST" duration-ms="6520" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyLoginWithInvalidEmailAndValidPassword()[pri:3, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:24:17 BST" name="verifyLoginWithInvalidEmailAndValidPassword" finished-at="2024-05-18T10:24:21 BST" duration-ms="4487" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginWithInvalidEmailAndValidPassword -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:24:21 BST" name="tearDown" finished-at="2024-05-18T10:24:22 BST" duration-ms="386" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:24:22 BST" name="setUp" finished-at="2024-05-18T10:24:27 BST" duration-ms="5876" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyLoginWithInvalidEmailandPassword()[pri:4, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:24:27 BST" name="verifyLoginWithInvalidEmailandPassword" finished-at="2024-05-18T10:24:32 BST" duration-ms="4695" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginWithInvalidEmailandPassword -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:24:32 BST" name="tearDown" finished-at="2024-05-18T10:24:33 BST" duration-ms="342" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:24:33 BST" name="setUp" finished-at="2024-05-18T10:24:38 BST" duration-ms="5688" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyLoginWithoutProvidingCredentials()[pri:5, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:24:38 BST" name="verifyLoginWithoutProvidingCredentials" finished-at="2024-05-18T10:24:39 BST" duration-ms="596" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginWithoutProvidingCredentials -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.testcases.Login@4d910fd6]" started-at="2024-05-18T10:24:39 BST" name="tearDown" finished-at="2024-05-18T10:24:39 BST" duration-ms="335" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.testcases.Login@1613674b]" started-at="2024-05-21T09:45:04 BST" name="tearDown" finished-at="2024-05-21T09:45:05 BST" duration-ms="187" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- shopperstack.testcases.Login -->
-      <class name="shopperstack.testcases.Search">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:shopperstack.testcases.Search@26275bef]" started-at="2024-05-18T10:24:39 BST" name="setUp" finished-at="2024-05-18T10:24:48 BST" duration-ms="9124" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifySearchWithValidProduct()[pri:1, instance:shopperstack.testcases.Search@26275bef]" started-at="2024-05-18T10:24:48 BST" name="verifySearchWithValidProduct" finished-at="2024-05-18T10:24:57 BST" duration-ms="8477" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySearchWithValidProduct -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.testcases.Search@26275bef]" started-at="2024-05-18T10:24:57 BST" name="tearDown" finished-at="2024-05-18T10:24:58 BST" duration-ms="1164" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- shopperstack.testcases.Search -->
-    </test> <!-- ShoppersStack Test -->
-  </suite> <!-- ShoppersStack Automation Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
