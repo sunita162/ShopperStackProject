@@ -64,13 +64,11 @@ public class Base {
         // Check if the browser name is Chrome
         if (browserName.equalsIgnoreCase("chrome")) {
             // Set the path for the ChromeDriver executable
-            System.setProperty("webdriver.chrome.driver", "D:\\Drivers\\chromedriver\\chromedriver-win64\\chromedriver.exe");
-            driver = new ChromeDriver();
+          driver = new ChromeDriver();
             Reporter.log("Successfully Launched Chrome Browser", true);
         // Check if the browser name is Firefox
         } else if (browserName.equalsIgnoreCase("firefox")) {
             // Set the path for the GeckoDriver executable
-            System.setProperty("webdriver.gecko.driver", "/ShopperStack1_Framework/Driver/geckodriver.exe");
             driver = new FirefoxDriver();
             Reporter.log("Successfully Launched Firefox Browser", true);
         } else {
