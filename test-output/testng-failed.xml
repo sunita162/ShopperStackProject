@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="shopperstack.AddCart.addMenProduct">
+      <class name="shopperstack.BuyProducts.buyProducts">
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="testAddShirtToCart"/>
+          <include name="buyNowButton"/>
         </methods>
-      </class> <!-- shopperstack.AddCart.addMenProduct -->
+      </class> <!-- shopperstack.BuyProducts.buyProducts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

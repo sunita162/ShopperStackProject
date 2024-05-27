@@ -49,7 +49,7 @@ private WebDriver driver;
 	/*public static boolean menProductIsDisplayed() {
 		boolean displayStatus = Jeans.isDisplayed();
 		return displayStatus;
-	}*/
+	}
 	/*  public static  void clickOnaddToCartButton() {
 	    	try {
 				addToCart.click();
@@ -93,11 +93,11 @@ private WebDriver driver;
         Cream.click();
     }
 
-  
+  public void clickOnJeans() {
+	  Jeans.click();
+  }
  
-  /*  public static void clickAddToCart() {
-        addToCart.click();
-    }*/
+ 
     
     public boolean isProductInCart() {
         return cartItem.isDisplayed();

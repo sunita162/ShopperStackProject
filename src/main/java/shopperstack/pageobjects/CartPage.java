@@ -29,8 +29,9 @@ public class CartPage {
     @FindBy(xpath="//*[@id=\"root\"]/div[4]/div/div/div[2]/div[3]/div[2]/button")
     private WebElement AddToCart;
     
-    @FindBy(xpath="//*[@id=\"buynow_fl\"]")
+    @FindBy(xpath="//*[@id=\"Buy Now\"]/span")
     private WebElement BuyNow;
+	private WebElement addAdressButton;
     
     // Constructor
     public CartPage(WebDriver driver) {
@@ -57,9 +58,20 @@ public class CartPage {
         return String.valueOf(itemCount);
     }
     
-    public void navigateToCartPage() {
+    public AdressPage navigateToCartPage() {
     	cartBadge.click();
+		return null;
     }
+    public AdressPage navigateToAdressPage() {
+    	addAdressButton.click();
+    	return new  AdressPage(driver);
+    }
+    
+   /* public RegisterPage navigateToRegisterPage() {
+		loginButton.click();
+		CreateAccount.click();
+		return new RegisterPage(driver);*/
+		
     
     public void clickAddToCart() {
         AddToCart.click();

@@ -11,12 +11,12 @@
       <![CDATA[login Successfull]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-05-26T21:59:00 BST" name="Default suite" finished-at="2024-05-26T21:59:58 BST" duration-ms="58364">
+  <suite started-at="2024-05-27T23:02:47 BST" name="Default suite" finished-at="2024-05-27T23:03:04 BST" duration-ms="16616">
     <groups>
     </groups>
-    <test started-at="2024-05-26T21:59:00 BST" name="Default test" finished-at="2024-05-26T21:59:58 BST" duration-ms="58364">
-      <class name="shopperstack.AddCart.addMenProduct">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:shopperstack.AddCart.addMenProduct@44821a96]" started-at="2024-05-26T21:59:00 BST" name="setUp" finished-at="2024-05-26T21:59:04 BST" duration-ms="3701" status="PASS">
+    <test started-at="2024-05-27T23:02:47 BST" name="Default test" finished-at="2024-05-27T23:03:04 BST" duration-ms="16616">
+      <class name="shopperstack.BuyProducts.buyProducts">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:shopperstack.BuyProducts.buyProducts@4e7912d8]" started-at="2024-05-27T23:02:47 BST" name="setUp" finished-at="2024-05-27T23:02:50 BST" duration-ms="2492" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully Launched Chrome Browser]]>
@@ -26,18 +26,18 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testAddShirtToCart()[pri:0, instance:shopperstack.AddCart.addMenProduct@44821a96]" started-at="2024-05-26T21:59:04 BST" name="testAddShirtToCart" finished-at="2024-05-26T21:59:58 BST" duration-ms="54458" status="PASS">
+        <test-method signature="buyNowButton()[pri:0, instance:shopperstack.BuyProducts.buyProducts@4e7912d8]" started-at="2024-05-27T23:02:50 BST" name="buyNowButton" finished-at="2024-05-27T23:03:04 BST" duration-ms="13914" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[login Successfull]]>
             </line>
           </reporter-output>
-        </test-method> <!-- testAddShirtToCart -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.AddCart.addMenProduct@44821a96]" started-at="2024-05-26T21:59:58 BST" name="tearDown" finished-at="2024-05-26T21:59:58 BST" duration-ms="181" status="PASS">
+        </test-method> <!-- buyNowButton -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.BuyProducts.buyProducts@4e7912d8]" started-at="2024-05-27T23:03:04 BST" name="tearDown" finished-at="2024-05-27T23:03:04 BST" duration-ms="185" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- shopperstack.AddCart.addMenProduct -->
+      </class> <!-- shopperstack.BuyProducts.buyProducts -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
