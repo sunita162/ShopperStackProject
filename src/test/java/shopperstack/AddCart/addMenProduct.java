@@ -19,7 +19,7 @@ public class addMenProduct extends Base {
     
     @Test
     public void testAddShirtToCart() throws InterruptedException {
-        // Log in to the application
+        // Log in to the applications
         login(prop.getProperty("validEmail"), prop.getProperty("validPassword"));
         UserHomePage userHomePage = new UserHomePage(driver);
         
@@ -31,7 +31,6 @@ public class addMenProduct extends Base {
         cartPage.navigateToCartPage();
         Thread.sleep(5000);
         cartPage.removeAllItemsFromCart();
-        
         
         // Retrieve the initial cart item count
         
