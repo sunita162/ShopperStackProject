@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Successfully Launched Chrome Browser]]>
@@ -7,13 +7,16 @@
     <line>
       <![CDATA[Browser window is maximized successfully]]>
     </line>
+    <line>
+      <![CDATA[login Successfull]]>
+    </line>
   </reporter-output>
-  <suite started-at="2024-05-21T10:41:28 BST" name="Default suite" finished-at="2024-05-21T10:41:38 BST" duration-ms="10463">
+  <suite started-at="2024-05-26T21:59:00 BST" name="Default suite" finished-at="2024-05-26T21:59:58 BST" duration-ms="58364">
     <groups>
     </groups>
-    <test started-at="2024-05-21T10:41:28 BST" name="Default test" finished-at="2024-05-21T10:41:38 BST" duration-ms="10463">
-      <class name="shopperstack.testcases.Register">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:shopperstack.testcases.Register@5fd4f8f5]" started-at="2024-05-21T10:41:28 BST" name="setUp" finished-at="2024-05-21T10:41:32 BST" duration-ms="4206" status="PASS">
+    <test started-at="2024-05-26T21:59:00 BST" name="Default test" finished-at="2024-05-26T21:59:58 BST" duration-ms="58364">
+      <class name="shopperstack.AddCart.addMenProduct">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:shopperstack.AddCart.addMenProduct@44821a96]" started-at="2024-05-26T21:59:00 BST" name="setUp" finished-at="2024-05-26T21:59:04 BST" duration-ms="3701" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully Launched Chrome Browser]]>
@@ -23,15 +26,18 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyRegisteringAnAccountWithMandatoryFields()[pri:0, instance:shopperstack.testcases.Register@5fd4f8f5]" started-at="2024-05-21T10:41:32 BST" name="verifyRegisteringAnAccountWithMandatoryFields" finished-at="2024-05-21T10:41:38 BST" duration-ms="5971" status="PASS">
+        <test-method signature="testAddShirtToCart()[pri:0, instance:shopperstack.AddCart.addMenProduct@44821a96]" started-at="2024-05-26T21:59:04 BST" name="testAddShirtToCart" finished-at="2024-05-26T21:59:58 BST" duration-ms="54458" status="PASS">
           <reporter-output>
+            <line>
+              <![CDATA[login Successfull]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- verifyRegisteringAnAccountWithMandatoryFields -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.testcases.Register@5fd4f8f5]" started-at="2024-05-21T10:41:38 BST" name="tearDown" finished-at="2024-05-21T10:41:38 BST" duration-ms="234" status="PASS">
+        </test-method> <!-- testAddShirtToCart -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:shopperstack.AddCart.addMenProduct@44821a96]" started-at="2024-05-26T21:59:58 BST" name="tearDown" finished-at="2024-05-26T21:59:58 BST" duration-ms="181" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- shopperstack.testcases.Register -->
+      </class> <!-- shopperstack.AddCart.addMenProduct -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

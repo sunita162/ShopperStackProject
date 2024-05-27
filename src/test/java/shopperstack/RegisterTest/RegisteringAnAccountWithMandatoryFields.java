@@ -1,4 +1,4 @@
-package shopperstack.testcases;
+package shopperstack.RegisterTest;
 
 import org.testng.annotations.Test;
 
@@ -6,14 +6,9 @@ import shopperstack.base.Base;
 import shopperstack.pageobjects.HomePage;
 import shopperstack.pageobjects.RegisterPage;
 
-public class Register extends Base {
+public class RegisteringAnAccountWithMandatoryFields extends Base {
 
-    private RegisterPage registerPage;
-
-    public Register() {
-        super();
-    }
-
+	  private RegisterPage registerPage;
     @Test
     public void verifyRegisteringAnAccountWithMandatoryFields() {
         HomePage homePage = new HomePage(driver);
@@ -27,17 +22,5 @@ public class Register extends Base {
         registerPage.register(firstName, lastName, email, password, confirmPassword, phone);
     }
 
-    @Test
-    public void verifypasswordMisMatchs()  {
-        HomePage homePage = new HomePage(driver);
-        registerPage = homePage.navigateToRegisterPage();
-        String firstName = dataProp.getProperty("firstName");
-        String lastName = dataProp.getProperty("lastName");
-        String email = dataProp.getProperty("email");
-        String password = dataProp.getProperty("password");
-        String confirmPassword = "MisMatchPassword";
-        String phone = dataProp.getProperty("phoneNumber");
-        registerPage.registerFieldValidation(firstName, lastName, email, password, confirmPassword, phone);
-       
-    }
+
 }

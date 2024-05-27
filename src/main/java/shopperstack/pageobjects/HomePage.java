@@ -25,6 +25,11 @@ public class HomePage {
 	@FindBy(xpath="//*[@id=\"root\"]/div[3]/nav/ol/li/a")
 	private WebElement homePageInformationOption;
 	
+	
+	
+	
+	
+	
 	public HomePage(WebDriver driver) {
 		//when we create object for homepage,this constructor will be called to initialize these webelements 
 		this.driver=driver;
@@ -56,6 +61,7 @@ public class HomePage {
 			searchBoxField.sendKeys(productText);
 		}
 		
+
 		public SearchPage clickOnSearchButton() {
 			 searchButton.click();
 			 return new SearchPage(driver);
@@ -74,5 +80,6 @@ public class HomePage {
 			return displayStatus;
 			
 		}
-	}
+		
+}
 

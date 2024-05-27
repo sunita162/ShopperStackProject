@@ -1,4 +1,4 @@
-package shopperstack.testcases;
+package shopperstack.LoginTest;
 
 
 import org.testng.Assert;
