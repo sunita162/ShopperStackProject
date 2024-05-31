@@ -9,10 +9,12 @@ import org.openqa.selenium.support.ui.Select;
 public class AdressPage {
     private WebDriver driver;
     
-    @FindBy(xpath = "//*[@id=\"root\"]/div[4]/div[1]/a/button/span")
-    private WebElement addNewAdress;
+   
     
-    @FindBy(xpath = "//*[@id=\"root\"]/div[4]/div[3]/button")
+    @FindBy(xpath = "//button[@class='selectaddress_adneadd__cICdt']")
+    private WebElement addNewAdressLink;
+    
+    @FindBy(xpath = "//button[@class='selectaddress_proceed__qiGsK']")
     private WebElement proceedButton;
     
     @FindBy(id = "Name")
@@ -45,9 +47,11 @@ public class AdressPage {
     @FindBy(xpath = "//*[@id=\"City\"]")
     private WebElement cityDropdown;
     
+    @FindBy(xpath = "//input[@type='radio' and @name='address']")
+    private WebElement addressRadioButton;
   
-    @FindBy(xpath = "//*[@id=\"Address type\"]")
-    private WebElement addressType;
+    @FindBy(xpath = "//input[@id='Home']")
+    private WebElement addressTypeHome;
     
     @FindBy(id="Home")
     private WebElement homeField;
@@ -63,8 +67,8 @@ public class AdressPage {
         PageFactory.initElements(driver, this);
     }
     
-    public WebElement getAddNewAdress() {
-        return addNewAdress;
+    public WebElement addNewAdressLink() {
+        return addNewAdressLink;
     }
     
     public WebElement getProceedButton() {
@@ -110,10 +114,8 @@ public class AdressPage {
         return cityDropdown;
     }
     
-   
-    
-    public WebElement getAddressType() {
-        return addressType;
+    public WebElement selectAddressTypeHome() {
+        return addressTypeHome;
     }
 
     public WebElement getHomeField() {
@@ -126,8 +128,13 @@ public class AdressPage {
 
     public WebElement getOtherField() {
         return otherField;
-    }
-    public CartPage navigateToCartPage() {
+    }    
+        
+     public WebElement selectaddressRadioButton() {
+        return addressRadioButton;
+     }  
+        
+     public CartPage navigateToCartPage() {
 		addAdressButton.click();
 			return null;
 	}
@@ -151,8 +158,9 @@ public class AdressPage {
     }
     
     // Method to fill the address form, including selecting country, state, and city
-    public void homefillAddress(String name, String houseOfficeInfo, String streetInfo, String landmark, String pincode, String phoneNumber, String country, String state, String city) {
-    	getAddNewAdress().click();
+    public void homefillAddress(String name,  String houseOfficeInfo, String streetInfo, String landmark, String pincode, String phoneNumber, String country, String state, String city) {
+    	//addNewAdressLink().click();
+    	selectAddressTypeHome().click();
         getNameField().sendKeys(name);
         getHouseOfficeField().sendKeys(houseOfficeInfo);
         getStreetInfoField().sendKeys(streetInfo);
@@ -167,7 +175,7 @@ public class AdressPage {
     
     public void officefillAddress(String name, String houseOfficeInfo, String streetInfo, String landmark, String pincode, String phoneNumber, String country, String state, String city) {
     	 
-    	getAddNewAdress().click();
+    	addNewAdressLink().click();
         getNameField().sendKeys(name);
         getHouseOfficeField().sendKeys(houseOfficeInfo);
         getStreetInfoField().sendKeys(streetInfo);
@@ -181,14 +189,13 @@ public class AdressPage {
     }
     
     public void otherAdressfillAddress(String name, String houseOfficeInfo, String streetInfo, String landmark, String pincode, String phoneNumber, String country, String state, String city, String addressTypeValue) {
-        getAddNewAdress().click();
+    	addNewAdressLink().click();
         getNameField().sendKeys(name);
         getHouseOfficeField().sendKeys(houseOfficeInfo);
         getStreetInfoField().sendKeys(streetInfo);
         getLandmarkField().sendKeys(landmark);
         getPincodeField().sendKeys(pincode);
         getPhoneNumberField().sendKeys(phoneNumber);
-        getAddressType().sendKeys(addressTypeValue);
         selectCountry(country);
         selectState(state);
         selectCity(city);

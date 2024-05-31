@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="shopperstack.BuyProducts.buyProducts">
+      <class name="shopperstack.LoginTest.LoginWithoutProvidingCredentials">
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="buyNowButton"/>
+          <include name="verifyLoginWithoutProvidingCredentials"/>
         </methods>
-      </class> <!-- shopperstack.BuyProducts.buyProducts -->
+      </class> <!-- shopperstack.LoginTest.LoginWithoutProvidingCredentials -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

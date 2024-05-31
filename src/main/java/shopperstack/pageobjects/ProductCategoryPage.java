@@ -36,6 +36,7 @@ private WebDriver driver;
 	private static WebElement addToCart;
 	
 	@FindBy(xpath="//*[contains(text(),'add to cart')]")
+    //@FindBy(xpath="//button[@id='Buy Now' and contains(@class, 'ProductDisplay_buyNow__4fwjt')]/span[text()='buy now']")
 	public WebElement addToCartButton;
 	
 	
@@ -103,9 +104,9 @@ private WebDriver driver;
         return cartItem.isDisplayed();
     }
     
-    public void clickAddToCart() {
+    public WebElement clickAddToCart() {
        // WebElement addToCartButton = driver.findElement(By.xpath("//*[contains(text(),'add to cart')]"));
-        addToCartButton.click();
+        return addToCartButton;
 }
 }
 

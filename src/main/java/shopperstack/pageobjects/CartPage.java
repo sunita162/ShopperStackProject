@@ -29,7 +29,13 @@ public class CartPage {
     @FindBy(xpath="//*[@id=\"root\"]/div[4]/div/div/div[2]/div[3]/div[2]/button")
     private WebElement AddToCart;
     
-    @FindBy(xpath="//*[@id=\"Buy Now\"]/span")
+    //@FindBy(xpath="//*[@id=\"Buy Now\"]/span")
+    //@FindBy(xpath="//span[text()='Buy Now']")
+    //@FindBy(xpath="//button[@id='Buy Now' and @name='Buy Now' and contains(@class, 'ProductDisplay_buyNow__4fwjt')]/span[text()='buy now']")
+    //@FindBy(xpath="//button[@id='Buy Now' and @name='Buy Now' and contains(@class, 'ProductDisplay_buyNow__4fwjt')]")
+   // @FindBy(xpath="//button[@id='Buy Now' and contains(@class, 'ProductDisplay_buyNow__4fwjt')]/span[text()='buy now']")
+    @FindBy(xpath="//button[@id='Buy Now' and @name='Buy Now' and contains(@class, 'ProductDisplay_buyNow__4fwjt')]")
+
     private WebElement BuyNow;
 	private WebElement addAdressButton;
     

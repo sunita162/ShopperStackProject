@@ -8,6 +8,7 @@ import java.util.NoSuchElementException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,15 +23,16 @@ import shopperstack.pageobjects.ProductCategoryPage;
 import shopperstack.pageobjects.UserHomePage;
 
 public class buyProducts extends Base {
-	//private WebDriver driver;
-   // private ProductCategoryPage productCategoryPage;
-   // private CartPage cartPage;
-private AdressPage adressPage;
+	
 	
 	@Test
 	public void buyNowButton() throws InterruptedException {
+		
+		//Login
 		login(prop.getProperty("validEmail"), prop.getProperty("validPassword"));
 		UserHomePage userHomePage = new UserHomePage (driver);
+		
+		//Select product catagory and select a product 
 		userHomePage.clickMenCategoryLink();
 		ProductCategoryPage productCategoryPage= new ProductCategoryPage(driver);
     	productCategoryPage.clickOnJeans();
@@ -38,18 +40,34 @@ private AdressPage adressPage;
     	CartPage cartPage = new CartPage(driver);
        cartPage.clickBuyNow();
        Assert.assertTrue(driver.getPageSource().contains("Address"), "The page source should contain 'Address'");
-     Thread.sleep(5000);
+     Thread.sleep(2000);
+     
        AdressPage adressPage=new AdressPage(driver);
-       adressPage.getAddNewAdress();
+       adressPage.addNewAdressLink().click();
        Assert.assertTrue(driver.getPageSource().contains("addressform"), "The page source should contain 'addressform'");
+      
        
-       adressPage=cartPage.navigateToAdressPage();
+       adressPage.selectAddressTypeHome().click();
        String name=dataProp.getProperty("name");
        String houseOfficeInfo=dataProp.getProperty("houseOfficeInfo");
-       
-       
-    }
+       String streetInfoField=dataProp.getProperty("streetInfoField");
+       String landmarkField=dataProp.getProperty("landmarkField");
+       String pincodeField=dataProp.getProperty("pincodeField");
+       String phoneNumberField=dataProp.getProperty("phoneNumberField");
+       String countryDropdown=dataProp.getProperty("countryDropdown");
+       String stateDropdown=dataProp.getProperty("stateDropdown");
+       String cityDropdown=dataProp.getProperty("cityDropdown");
 
-	
+       adressPage.homefillAddress(name, houseOfficeInfo, streetInfoField, landmarkField, pincodeField, phoneNumberField, countryDropdown, stateDropdown, cityDropdown);
+       adressPage.selectaddressRadioButton().click();
+       Thread.sleep(7000);
+       adressPage.getProceedButton().click();
+       Thread.sleep(7000);
+
+       Assert.assertTrue(driver.getPageSource().contains("Payment Method"), "The page source should contain 'Payment Method'");
+       
+       
+
+	}
 	
 }

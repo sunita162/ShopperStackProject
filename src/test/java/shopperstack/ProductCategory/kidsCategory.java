@@ -7,7 +7,7 @@ import shopperstack.base.Base;
 import shopperstack.pageobjects.UserHomePage;
 
 public class kidsCategory extends Base {
-	
+
 	@Test
 	public void ClickKidsCategoryLink() throws InterruptedException {
 		login(prop.getProperty("validEmail"), prop.getProperty("validPassword"));
