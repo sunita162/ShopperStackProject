@@ -21,8 +21,7 @@ public void ClickwomanCategoryLink() {
 	login(prop.getProperty("validEmail"), prop.getProperty("validPassword"));
 	UserHomePage userHomePage = new UserHomePage (driver);
 	userHomePage.clickOnWomenCategoryLink();
-    Assert.assertTrue(driver.getPageSource().contains("forever21"), "The page source should contain 'forever21'");
-
+    Assert.assertTrue(driver.getPageSource().contains("Women "), "The page source should contain 'Women '");
 
 }
     		

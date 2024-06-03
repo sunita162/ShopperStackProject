@@ -7,6 +7,25 @@
   <test name="ShoppersStack1 Tests">
     <classes>
  <class name="shopperstack.Payment.Payment"/>
+ <class name="shopperstack.LoginTest.LoginwithInvalidCredentials"/>
+ <class name="shopperstack.LoginTest.LoginwithInvalidEmailAndValidPassword"/>
+ <class name="shopperstack.LoginTest.LoginwithValidCredential"/>
+ <class name="shopperstack.LoginTest.LoginwithValidEmailAndInvalidPassword"/>
+ <class name="shopperstack.LoginTest.LoginWithoutProvidingCredentials"/>
+ 
+ <class name="shopperstack.RegisterTest.RegisteringAnAccountWithMandatoryFields"/>
+ <class name="shopperstack.RegisterTest.RegisterpasswordMisMatchs"/>
+ 
+ <class name="shopperstack.SearchTest.SearchWithInvalidProduct"/>
+ <class name="shopperstack.SearchTest.SearchWithValidProduct"/>
+ 
+ <class name="shopperstack.ProductCategory.beautyCategory"/>
+ <class name="shopperstack.ProductCategory.kidsCategory"/>
+ <class name="shopperstack.ProductCategory.MenCategory"/>
+ <class name="shopperstack.ProductCategory.womanCategory"/>
+ 
+ <class name="shopperstack.BuyProducts.buyProducts"/>
+ 
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

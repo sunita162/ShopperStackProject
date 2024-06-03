@@ -19,11 +19,7 @@ public class SearchWithValidProduct extends Base{
 	        SearchPage searchPage = homePage.searchForAProduct(dataProp.getProperty("validProduct"));
 	        Thread.sleep(5000);
 	       Assert.assertTrue(searchPage.displayStatusOfIphoneValidProduct(), "Valid product iPhone is not displayed in the search results");
-	        //WebDriverWait
-	  
-	    //Assert.assertTrue(driver.getPageSource().contains("APPLE IPhone 11"), "The page source should contain 'APPLE IPhone 11'");
-      //  Assert.assertTrue(driver.getPageSource().contains("APPLE IPhone 11"), "The page source should contain 'APPLE IPhone 11'");
-
+	        
 }
 
 }
