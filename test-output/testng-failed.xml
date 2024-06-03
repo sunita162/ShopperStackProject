@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="shopperstack.LoginTest.LoginWithoutProvidingCredentials">
+      <class name="shopperstack.SearchTest.SearchWithInvalidProduct">
         <methods>
           <include name="tearDown"/>
+          <include name="verifySearchWithInvalidProduct"/>
           <include name="setUp"/>
-          <include name="verifyLoginWithoutProvidingCredentials"/>
         </methods>
-      </class> <!-- shopperstack.LoginTest.LoginWithoutProvidingCredentials -->
+      </class> <!-- shopperstack.SearchTest.SearchWithInvalidProduct -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
